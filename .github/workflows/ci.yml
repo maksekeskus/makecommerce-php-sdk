@@ -1,0 +1,32 @@
+name: Code validation
+
+on: [push, pull_request]
+
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Composer install
+        uses: php-actions/composer@v6
+        with:
+          php_extensions: json sockets
+      - name: PHPStan
+        uses: php-actions/phpstan@v3
+        with:
+          configuration: ./phpstan.neon.dist
+          php_extensions: json sockets
+  code-sniffer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Composer install
+        uses: php-actions/composer@v6
+        with:
+          php_extensions: json sockets
+      - name: PHP Code Sniffer
+        uses: php-actions/phpcs@v1
+        with:
+          php_version: 8.2
+          standard: phpcs.xml
+          path: src/

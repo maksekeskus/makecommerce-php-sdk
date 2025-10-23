@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "environment": {
+      "type": "object",
+      "properties": {
+        "module": { "type": "string" },
+        "platform": { "type": "string" }
+      },
+      "required": ["platform", "module"]
+    }
+  },
+  "required": ["environment"]
+}

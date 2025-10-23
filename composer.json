@@ -1,0 +1,40 @@
+{
+    "name": "makecommerce/makecommerce-sdk",
+    "description": "MakeCommerce payment SDK",
+    "keywords": [
+        "php-sdk",
+        "rest",
+        "psr7"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MakeCommerce",
+            "email": "modules@makecommerce.net",
+            "homepage": "https://makecommerce.net/"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.10",
+        "justinrainbow/json-schema": "^5.3"
+    },
+    "require-dev": {
+        "phpstan/extension-installer": "^1.4.0",
+        "phpstan/phpstan": "^1.12",
+        "squizlabs/php_codesniffer": "^3.13"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "MakeCommerce\\": "src/"
+        }
+    }
+}
