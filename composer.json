@@ -22,7 +22,7 @@
     },
     "require-dev": {
         "phpstan/extension-installer": "^1.4.3",
-        "phpstan/phpstan": "^1.12",
+        "phpstan/phpstan": "^2.1",
         "squizlabs/php_codesniffer": "^4.0"
     },
     "config": {
