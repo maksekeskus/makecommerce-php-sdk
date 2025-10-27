@@ -22,8 +22,7 @@
 Download the packaged library from the repository [releases]
 (https://github.com/maksekeskus/makecommerce-php-sdk/releases/).
 
-Unpack it into your project folder (i.e. /htdocs/myshop/ )
-and include the libarary file.
+Unpack it into your project folder (i.e. /htdocs/myshop/ ) and include the autoloader.
 
 To get your API keys, please visit https://merchant.test.maksekeskus.ee/ or https://merchant.maksekeskus.ee/
 
