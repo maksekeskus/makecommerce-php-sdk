@@ -18,3 +18,4 @@ cache.properties
 # Composer
 composer.phar
 composer.lock
+bin/
