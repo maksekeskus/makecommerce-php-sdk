@@ -179,6 +179,7 @@ class MakeCommerceClient
      * https://developer.makecommerce.net/guides/custom-api/RegularPaymentFlow#validation-of-mac-value
      *
      * @param array $data
+     * example payload, when using GET callback ['json' => $_GET['json'], 'mac' => $_GET['mac']]
      *
      * @return bool Verify MAC
      * @throws MCException
