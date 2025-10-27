@@ -34,7 +34,7 @@ To get your API keys, please visit https://merchant.test.maksekeskus.ee/ or http
 ``` php
 <?php
 
-require '../vendor/autoload.php';
+require __DIR__ . '/makecommerce-php-sdk-1.0.0/vendor/autoload.php'; //Comment this line out if you are using Composer to build your project
 
 use MakeCommerce\MakeCommerceClient;
 
