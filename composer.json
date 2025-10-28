@@ -1,5 +1,5 @@
 {
-    "name": "makecommerce/makecommerce-sdk",
+    "name": "maksekeskus/makecommerce-php-sdk",
     "description": "MakeCommerce payment SDK",
     "keywords": [
         "php-sdk",
