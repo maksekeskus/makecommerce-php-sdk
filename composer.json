@@ -6,6 +6,7 @@
         "rest",
         "psr7"
     ],
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
@@ -18,7 +19,7 @@
         "php": "^8.1",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.10",
-        "justinrainbow/json-schema": "^6.6"
+        "justinrainbow/json-schema": "^6.8"
     },
     "require-dev": {
         "phpstan/extension-installer": "^1.4.3",
