@@ -42,7 +42,11 @@ class MCResponse
         $this->headers = $response->getHeaders();
         $this->code = $response->getStatusCode();
         $this->rawBody = $response->getBody()->getContents();
-        $this->body = json_decode($this->rawBody, true);
+
+        $contentType = $response->getHeaderLine('Content-Type');
+        $this->body = str_contains($contentType, 'application/json')
+            ? json_decode($this->rawBody, true)
+            : null;
     }
 
     public function getCode(): int
@@ -50,7 +54,7 @@ class MCResponse
         return $this->code;
     }
 
-    public function getBody(): array
+    public function getBody(): ?array
     {
         return $this->body;
     }

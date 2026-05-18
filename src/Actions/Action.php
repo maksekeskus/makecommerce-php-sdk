@@ -112,11 +112,11 @@ abstract class Action
         array $additionalHeaders = []
     ): MCResponse {
 
-        $requestContent = ['headers' => $this->headers];
-
         if (!empty($additionalHeaders)) {
             $this->headers = array_merge($this->headers, $additionalHeaders);
         }
+
+        $requestContent = ['headers' => $this->headers];
 
         if (!empty($params)) {
             $requestContent['query'] = $params;

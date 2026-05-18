@@ -19,12 +19,16 @@ class ViewAccountstatementAction extends Action
     {
         $this->endpoint = 'shop/accountstatements/xml';
         $this->schemaName = 'AccountstatementXMLSchema.json';
+        $this->headers['Accept'] = 'application/xml';
+        unset($this->headers['Content-Type']);
     }
 
     public function setCAMT053(): void
     {
         $this->endpoint = 'shop/accountstatements/camt053';
         $this->schemaName = 'AccountstatementXMLSchema.json';
+        $this->headers['Accept'] = 'application/xml';
+        unset($this->headers['Content-Type']);
     }
 
     protected function getMethod(): Method
