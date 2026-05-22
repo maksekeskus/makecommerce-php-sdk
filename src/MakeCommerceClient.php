@@ -25,26 +25,27 @@ class MakeCommerceClient
     private Client $client;
     private string $apiUrl;
 
-    private array $appInfo = [
-        'module' => 'MakeCommerce PHP SDK',
-        'module_version' => '2.0.0',
-        'platform' => 'PLATFORM_TEST',
-        'platform_version' => 'PLATFORM_VERSION_1'
-    ];
+    private array $appInfo;
 
     /**
      * API client constructor
      *
      * @param string $shopId Shop ID
      * @param string $secretKey Secret API Key
-     * @param bool $testEnv TRUE if connecting to API in test environment, FALSE otherwise. Default to FALSE.
+     * @param string $platform Platform name (e.g. 'WooCommerce')
+     * @param string $platformVersion Platform version (e.g. '6.5.0')
+     * @param string $module Module/plugin name (e.g. 'MyPlugin')
+     * @param string $moduleVersion Module/plugin version (e.g. '1.0.0')
+     * @param bool $testEnv TRUE if connecting to API in test environment, FALSE otherwise. Defaults to FALSE.
      */
     public function __construct(
         string $shopId,
         string $secretKey,
         string $platform,
         string $platformVersion,
-        bool $testEnv = false
+        string $module,
+        string $moduleVersion,
+        bool $testEnv = false,
     ) {
         if ($testEnv) {
             $this->apiUrl = Environment::TEST_BASEURI . Environment::API_VERSION;
@@ -58,8 +59,12 @@ class MakeCommerceClient
             'base_uri' => $this->apiUrl,
             'auth' => [$this->shopId, $this->secretKey]]);
 
-        $this->appInfo['platform'] = $platform;
-        $this->appInfo['platform_version'] = $platformVersion;
+        $this->appInfo = [
+            'module' => $module,
+            'module_version' => $moduleVersion,
+            'platform' => $platform,
+            'platform_version' => $platformVersion,
+        ];
     }
 
     /**

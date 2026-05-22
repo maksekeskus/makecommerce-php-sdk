@@ -39,6 +39,8 @@ $client = new MakeCommerceClient(
     secretKey: Environment::TEST_SECRET_KEY,
     platform: 'MyPlatform',
     platformVersion: '1.0.0',
+    module: 'MyPlugin',
+    moduleVersion: '1.0.0',
     testEnv: true
 );
 
@@ -48,9 +50,23 @@ $client = new MakeCommerceClient(
     secretKey: 'YOUR_SECRET_KEY',
     platform: 'MyPlatform',
     platformVersion: '1.0.0',
+    module: 'MyPlugin',
+    moduleVersion: '1.0.0',
     testEnv: true   // true = test, false = production (default)
 );
 ```
+
+**Constructor parameters:**
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `shopId` | `string` | yes | — | Your shop ID |
+| `secretKey` | `string` | yes | — | Your secret API key |
+| `platform` | `string` | yes | — | Platform name (e.g. `'WooCommerce'`) |
+| `platformVersion` | `string` | yes | — | Platform version (e.g. `'6.5.0'`) |
+| `module` | `string` | yes | — | Module/plugin name (e.g. `'MyPlugin'`) |
+| `moduleVersion` | `string` | yes | — | Module/plugin version (e.g. `'1.0.0'`) |
+| `testEnv` | `bool` | no | `false` | `true` = test environment, `false` = production |
 
 API base URLs:
 - Test: `https://api.test.maksekeskus.ee/v1/`
@@ -791,6 +807,8 @@ $client = new MakeCommerceClient(
     secretKey: getenv('MC_SECRET_KEY'),
     platform: 'MyShop',
     platformVersion: '1.0.0',
+    module: 'MyPlugin',
+    moduleVersion: '1.0.0',
     testEnv: true
 );
 
