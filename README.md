@@ -51,6 +51,8 @@ $client = new MakeCommerceClient(
     secretKey: Environment::TEST_SECRET_KEY,
     platform: 'MyPlatform',
     platformVersion: '1.0.0',
+    module: 'MyPlugin',
+    moduleVersion: '1.0.0',
     testEnv: true
 );
 ```
